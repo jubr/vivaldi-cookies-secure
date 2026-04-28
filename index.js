@@ -62,7 +62,7 @@ function getDerivedKey(callback) {
 	if (process.platform === 'darwin') {
 
 		keytar = require('keytar');
-		keytar.getPassword('Vivaldi Storage', 'Vivaldi').then(function(chromePassword) {
+		keytar.getPassword('Vivaldi Safe Storage', 'Vivaldi').then(function(chromePassword) {
 			crypto.pbkdf2(chromePassword, SALT, ITERATIONS, KEYLENGTH, 'sha1', callback);
 		});
 
